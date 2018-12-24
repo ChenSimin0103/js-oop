@@ -15,7 +15,7 @@ function Circle(radius) {
             return _defaultLocation
         },
         set: function (val) {
-            // 在此可写对val的参数校验
+            // 在此可写对val的参数校验d
             console.log(' _defaultLocation cannot changed!')
         }
     })
