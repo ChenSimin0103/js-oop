@@ -6,6 +6,7 @@ Shape.prototype.show = function () {
 }
 
 function Circle(radius, color) {
+    // super constructor的实现
     Shape.call(this, color)
 
     this.radius = radius
@@ -17,6 +18,12 @@ Circle.prototype.draw = function () {
 // 使用Object.create()实现继承，同时注意重设构造器属性
 Circle.prototype = Object.create(Shape.prototype)
 Circle.prototype.constructor = Circle
+
+// 抽象一个函数，简化继承过程
+function extend(Child, Parent) {
+    Child.prototype = Object.create(Parent.prototype)
+    Child.prototype.constructor = Child
+}
 
 // 创建
 const s = new Shape()
